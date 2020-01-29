@@ -11,7 +11,7 @@ module.exports = {
     async updateSocketId(idcliente, idsocket) {
         return await pg(tableName).where({ idcliente }).update({ idsocket });
     },
-    async getSocketId(idcliente) {
+    async getSocketId({idcliente}) {
         return (await pg(tableName).select('idsocket').where({ idcliente }).first()).idsocket;
     }
 }

@@ -12,7 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "knex": "^0.20.8",
-    "pg": "^7.17.1",
+    "mysql": "^2.18.1",
     "socket.io": "^2.3.0"
   },
   "devDependencies": {

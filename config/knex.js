@@ -1,7 +1,7 @@
 const { database, user, password } = require('./../.env');
 
 const config = {
-	client: 'pg',
+	client: 'mysql',
 	connection: {
 		database,
 		user,
