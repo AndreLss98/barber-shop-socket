@@ -1,4 +1,4 @@
-const { database, user, password } = require('./../.env');
+const { database, user, password } = process.env;
 
 const config = {
 	client: 'mysql',
