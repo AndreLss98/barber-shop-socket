@@ -1,11 +1,20 @@
 require('dotenv').config();
-const socket = require('socket.io')();
+
+const socket = require('socket.io')({
+    cors: {
+        origin: "*"
+    }
+});
 const { PORT } = process.env;
 
 const Client = require('./models/cliente');
 const Profissional = require('./models/profissional');
 
 socket.on('connection', (client) => {
+
+    client.on('test-connection', (request) => {
+        client.emit("test-connection", { request, asResponse: true })
+    });
 
     client.on('login-cliente', async (user) => {
         await Client.updateSocketId(user.idcliente, client.id)
